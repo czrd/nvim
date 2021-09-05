@@ -19,6 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
 Plug 'gcmt/taboo.vim'
+Plug 'mg979/vim-xtabline'
 
 " terminal
 Plug 'voldikss/vim-floaterm'
@@ -38,4 +39,5 @@ Plug 'tpope/vim-commentary'
 
 " color themes
 Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 call plug#end()
