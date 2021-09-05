@@ -15,7 +15,8 @@
     "typescriptreact",
     "vue",
     "svelte",
-    "rust"
+    "rust",
+    "clojure"
   ],
   "snippets.autoTrigger": true,
   "go.disable": { "workspaceFolders": false },
@@ -39,6 +40,15 @@
       "initializationOptions": {
         "haskell": {}
       }
+    },
+    "clojure-lsp": {
+      "command": "bash",
+      "args": ["-c", "clojure-lsp"],
+      "filetypes": ["clojure"],
+      "rootPatterns": ["project.clj"],
+      "additionalSchemes": ["jar", "zipfile"],
+      "trace.server": "verbose",
+      "initializationOptions": {}
     }
   }
 }
