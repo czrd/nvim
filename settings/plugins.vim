@@ -40,4 +40,5 @@ Plug 'tpope/vim-commentary'
 " color themes
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
+Plug 'doums/darcula'
 call plug#end()

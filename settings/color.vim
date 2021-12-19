@@ -5,4 +5,7 @@
 "set background=light   " Setting light mode
 
 " onedark
-colorscheme onedark
+"colorscheme onedark
+
+" darcula
+colorscheme darcula
