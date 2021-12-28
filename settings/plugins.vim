@@ -30,7 +30,6 @@ Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --f
 
 " syntax
 Plug 'sheerun/vim-polyglot'
-Plug 'jaxbot/semantic-highlight.vim'
 
 " utilities
 Plug 'Townk/vim-autoclose'
