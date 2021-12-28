@@ -9,3 +9,6 @@
 
 " darcula
 colorscheme darcula
+
+" Challenger Deep
+colorscheme challenger_deep
