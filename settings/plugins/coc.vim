@@ -15,7 +15,6 @@ let g:coc_global_extensions = [
       \'coc-webpack',
       \'coc-prettier',
       \'coc-eslint',
-      \'coc-tslint',
       \'coc-tsserver',
       \'coc-tslint-plugin',
       \'coc-vetur',
