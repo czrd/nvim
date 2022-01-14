@@ -2,8 +2,12 @@ highlight IndentBlanklineContextChar guifg=#00FF00 gui=nocombine
 let g:indent_blankline_use_treesitter = v:true
 let g:indent_blankline_show_current_context = v:true
 let g:indent_blankline_context_patterns = [
+                  \'^field',
                   \'^func',
                   \'^if',
+                  \'^impl',
+                  \'^mod',
+                  \'^pointer',
                   \'^var',
                   \'argument_list',
                   \'arguments',
