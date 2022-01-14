@@ -12,6 +12,7 @@ source $HOME/.config/nvim/settings/plugins/coc.vim
 source $HOME/.config/nvim/settings/plugins/comfortable-motion.vim
 source $HOME/.config/nvim/settings/plugins/floaterm.vim
 source $HOME/.config/nvim/settings/plugins/fzf.vim
+source $HOME/.config/nvim/settings/plugins/indent-blankline.vim
 source $HOME/.config/nvim/settings/plugins/lightline.vim
 source $HOME/.config/nvim/settings/plugins/nerdtree.vim
 source $HOME/.config/nvim/settings/plugins/nvim-treesitter.vim
