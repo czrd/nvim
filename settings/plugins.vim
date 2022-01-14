@@ -8,7 +8,6 @@ Plug 'junegunn/fzf.vim'
 
 " code navigation
 Plug 'yuttie/comfortable-motion.vim'
-Plug 'Yggdroot/indentLine'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'craigemery/vim-autotag'
 
