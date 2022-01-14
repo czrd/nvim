@@ -4,7 +4,7 @@ set nu rnu
 set cul
 set tgc
 set winbl=20 pb=20
-set et sta sw=2 sts=2 ts=2
+set et sta sw=4 sts=4 ts=4
 set clipboard=unnamedplus
 
 let mapleader = ","
