@@ -1,9 +1,0 @@
-let g:floaterm_keymap_new    = '<Leader>fn'
-let g:floaterm_keymap_prev   = '<Leader>fk'
-let g:floaterm_keymap_next   = '<Leader>fj'
-let g:floaterm_keymap_toggle = '<Leader>ft'
-let g:floaterm_keymap_kill   = '<Leader>fx'
-let g:floaterm_height = 0.8
-let g:floaterm_width = 0.8
-let g:floaterm_title = '$1/$2'
-hi FloatermBorder guibg=darked
