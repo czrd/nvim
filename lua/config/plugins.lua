@@ -69,6 +69,13 @@ return packer.startup(function(use)
     use 'karb94/neoscroll.nvim'
     use 'yuttie/comfortable-motion.vim'
     use 'lukas-reineke/indent-blankline.nvim'
+    use {
+        'akinsho/bufferline.nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            require('bufferline').setup()
+        end,
+    }
 
     -- tag
     use 'craigemery/vim-autotag'
