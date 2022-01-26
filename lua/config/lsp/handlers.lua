@@ -52,16 +52,22 @@ local function keymaps(bufnr)
     keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>",     opts)
 
     -- actions
-    keymap(bufnr, "n", "K",          "<cmd>lua vim.lsp.buf.hover()<CR>",          opts)
+    -- keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+    -- keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+    -- keymap(bufnr, "n", "K",          "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    keymap(bufnr, "n", "K",          "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
     keymap(bufnr, "n", "<C-k>",      "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-    keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>",         opts)
-    keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>",    opts)
+    keymap(bufnr, "n", "<leader>rn", "<cmd>lua require('lspsaga.rename').rename()<CR>", opts)
+    keymap(bufnr, "n", "<leader>ca", "<cmd>lua require('lspsaga.codeaction').code_action()<CR>",opts)
 
     -- diagnostic
     keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-    keymap(bufnr, "n", "[g",        '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-    keymap(bufnr, "n", "gl",        '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>', opts)
-    keymap(bufnr, "n", "]g",        '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+    -- keymap(bufnr, "n", "[g",        '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+    -- keymap(bufnr, "n", "gl",        '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>', opts)
+    -- keymap(bufnr, "n", "]g",        '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+    keymap(bufnr, "n", "[g",        "<cmd>lua require('lspsaga.diagnostic').navigate('prev')()<CR>", opts)
+    keymap(bufnr, "n", "]g",        "<cmd>lua require('lspsaga.diagnostic').navigate('next')()<CR>", opts)
+    keymap(bufnr, "n", "gl",        "<cmd>lua require('lspsaga.diagnostic').show_line_diagnostics({ border = 'rounded' })<CR>", opts)
     keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
     -- format
