@@ -1,15 +1,19 @@
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 -- install packer if needed
 if fn.empty(fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = fn.system({
-        'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
-        install_path
-    })
+	PACKER_BOOTSTRAP = fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	})
 end
 
-vim.cmd [[packadd packer.nvim]]
+vim.cmd([[packadd packer.nvim]])
 
 -- reload neovim when plugins.lua is saved
 vim.cmd([[
@@ -22,107 +26,112 @@ vim.cmd([[
 -- if failed to require packer, do nothing
 local ok, packer = pcall(require, "packer")
 if not ok then
-    print("packer is not installed")
-    return
+	print("packer is not installed")
+	return
 end
 
 return packer.startup(function(use)
-    -- packer it self
-    use 'wbthomason/packer.nvim'
+	-- packer it self
+	use("wbthomason/packer.nvim")
 
-    -- lualine
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        config = function()
-            require('lualine').setup({
-                options = {
-                    section_separators = '', component_separators = ''
-                }
-            })
-        end,
-    }
+	-- lualine
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		config = function()
+			require("lualine").setup({
+				options = {
+					section_separators = "",
+					component_separators = "",
+				},
+			})
+		end,
+	})
 
-    -- utils
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-lua/popup.nvim'
-    use 'jiangmiao/auto-pairs'
-    use {
-        'terrortylor/nvim-comment',
-        config = function() require'nvim_comment'.setup {} end
-    }
+	-- utils
+	use("nvim-lua/plenary.nvim")
+	use("nvim-lua/popup.nvim")
+	use("jiangmiao/auto-pairs")
+	use({
+		"terrortylor/nvim-comment",
+		config = function()
+			require("nvim_comment").setup({})
+		end,
+	})
 
-    -- file navigation
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icon
-        },
-        config = function() require'nvim-tree'.setup {} end
-    }
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
+	-- file navigation
+	use({
+		"kyazdani42/nvim-tree.lua",
+		requires = {
+			"kyazdani42/nvim-web-devicons", -- optional, for file icon
+		},
+		config = function()
+			require("nvim-tree").setup({})
+		end,
+	})
+	use({
+		"nvim-telescope/telescope.nvim",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
 
-    -- code navigation
-    use 'karb94/neoscroll.nvim'
-    use 'yuttie/comfortable-motion.vim'
-    use 'lukas-reineke/indent-blankline.nvim'
-    use {
-        'akinsho/bufferline.nvim',
-        requires = 'kyazdani42/nvim-web-devicons',
-        config = function()
-            require('bufferline').setup()
-        end,
-    }
+	-- code navigation
+	use("karb94/neoscroll.nvim")
+	use("yuttie/comfortable-motion.vim")
+	use("lukas-reineke/indent-blankline.nvim")
+	use({
+		"akinsho/bufferline.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("bufferline").setup()
+		end,
+	})
 
-    -- tag
-    use 'craigemery/vim-autotag'
-    use 'preservim/tagbar'
+	-- tag
+	use("craigemery/vim-autotag")
+	use("preservim/tagbar")
 
-    -- terminal
-    use 'akinsho/toggleterm.nvim'
+	-- terminal
+	use("akinsho/toggleterm.nvim")
 
-    -- colorschemes
-    use 'challenger-deep-theme/vim'
-    use 'folke/tokyonight.nvim'
+	-- colorschemes
+	use("challenger-deep-theme/vim")
+	use("folke/tokyonight.nvim")
 
-    -- LSP
-    use 'neovim/nvim-lspconfig'
-    use 'williamboman/nvim-lsp-installer'
-    use 'tami5/lspsaga.nvim'
-    use 'jose-elias-alvarez/null-ls.nvim'
+	-- LSP
+	use("neovim/nvim-lspconfig")
+	use("williamboman/nvim-lsp-installer")
+	use("tami5/lspsaga.nvim")
+	use("jose-elias-alvarez/null-ls.nvim")
 
-    -- completion
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
-    use 'saadparwaiz1/cmp_luasnip'
+	-- completion
+	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
+	use("hrsh7th/cmp-cmdline")
+	use("hrsh7th/nvim-cmp")
+	use("saadparwaiz1/cmp_luasnip")
 
-    -- snippets
-    use 'L3MON4D3/LuaSnip'
-    use "rafamadriz/friendly-snippets"
+	-- snippets
+	use("L3MON4D3/LuaSnip")
+	use("rafamadriz/friendly-snippets")
 
-    -- tree-sitter
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-    }
+	-- tree-sitter
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+	})
 
-    -- git
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function()
-            require'gitsigns'.setup()
-        end
-    }
+	-- git
+	use({
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
+	})
 
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
-    if PACKER_BOOTSTRAP then
-        require('packer').sync()
-    end
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if PACKER_BOOTSTRAP then
+		require("packer").sync()
+	end
 end)

@@ -1,5 +1,5 @@
 local keymap = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 -- Leader key
 vim.g.mapleader = " "
@@ -20,31 +20,31 @@ keymap("n", "<C-l>", "<C-w><C-l>", opts)
 keymap("n", "<C-h>", "<C-w><C-h>", opts)
 
 -- resizing window
-keymap("n", "<C-Up>",    ":resize -2<CR>",          opts)
-keymap("n", "<C-Down>",  ":resize +2<CR>",          opts)
-keymap("n", "<C-Left>",  ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- tagbar
 keymap("n", "T", ":TagbarToggle<CR>", opts)
 
 -- tab
-keymap("n", "th", ":tabfirst<CR>",   opts)
-keymap("n", "tj", ":tabnext<CR>",    opts)
-keymap("n", "tk", ":tabprev<CR>",    opts)
-keymap("n", "tl", ":tablast<CR>",    opts)
+keymap("n", "th", ":tabfirst<CR>", opts)
+keymap("n", "tj", ":tabnext<CR>", opts)
+keymap("n", "tk", ":tabprev<CR>", opts)
+keymap("n", "tl", ":tablast<CR>", opts)
 keymap("n", "te", ":tabedit<Space>", opts)
-keymap("n", "tn", ":tabnew<Space>",  opts)
-keymap("n", "tx", ":tabclose<CR>",   opts)
+keymap("n", "tn", ":tabnew<Space>", opts)
+keymap("n", "tx", ":tabclose<CR>", opts)
 
 -- file explorer
-keymap("n", "<C-e>",      ":NvimTreeToggle<CR>",           opts)
+keymap("n", "<C-e>", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
-keymap("n", "<C-p>",      "<cmd>Telescope find_files<CR>", opts)
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>",  opts)
+keymap("n", "<C-p>", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
 
 -- navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>",     opts)
+keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- indent
