@@ -4,6 +4,13 @@ if not ok then
     return
 end
 
+local terminal = require('toggleterm.terminal').Terminal
+local lazygit = terminal:new({ cmd = 'lazygit', hidden = true, direction = 'float' })
+
+function _LAZYGIT_TOGGLE()
+    lazygit:toggle()
+end
+
 toggleterm.setup{
     -- size can be a number or function which is passed the current terminal
     size = 20,

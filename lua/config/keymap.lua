@@ -50,3 +50,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- indent
 keymap("v", ">", ">gv", opts)
 keymap("v", "<", "<gv", opts)
+
+-- git
+keymap("n", "<C-g>", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
