@@ -58,6 +58,7 @@ return packer.startup(function(use)
 			require("nvim_comment").setup({})
 		end,
 	})
+	use("gelguy/wilder.nvim")
 
 	-- file navigation
 	use({
