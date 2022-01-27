@@ -6,9 +6,14 @@ end
 
 local terminal = require("toggleterm.terminal").Terminal
 local lazygit = terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
+local twitter = terminal:new({ cmd = "rainbowstream", hidden = true, direction = "float" })
 
 function _TOGGLE_LAZYGIT()
 	lazygit:toggle()
+end
+
+function _TOGGLE_TWITTER()
+	twitter:toggle()
 end
 
 toggleterm.setup({
