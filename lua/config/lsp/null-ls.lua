@@ -1,28 +1,28 @@
 local ok, null_ls = pcall(require, "null-ls")
 if not ok then
-	print("null-ls is not installed.")
-	return
+  print "null-ls is not installed."
+  return
 end
 
-null_ls.setup({
-	sources = {
-		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.formatting.eslint,
-		null_ls.builtins.formatting.prettier,
-		null_ls.builtins.formatting.rustfmt,
-		null_ls.builtins.formatting.gofmt,
-		null_ls.builtins.formatting.shfmt.with({
-			extra_args = { "-i", "2", "-ci" },
-		}),
-	},
-	on_attach = function(client)
-		if client.resolved_capabilities.document_formatting then
-			vim.cmd([[
-                augroup LspFormatting
-                    autocmd! * <buffer>
-                    autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-                augroup END
-            ]])
-		end
-	end,
-})
+null_ls.setup {
+  sources = {
+    null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.eslint,
+    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.rustfmt,
+    null_ls.builtins.formatting.gofmt,
+    null_ls.builtins.formatting.shfmt.with {
+      extra_args = { "-i", "2", "-ci" },
+    },
+  },
+  on_attach = function(client)
+    if client.resolved_capabilities.document_formatting then
+      vim.cmd [[
+        augroup LspFormatting
+          autocmd! * <buffer>
+          autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+        augroup END
+      ]]
+    end
+  end,
+}
