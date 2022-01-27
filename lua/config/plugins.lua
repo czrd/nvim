@@ -85,6 +85,12 @@ return packer.startup(function(use)
 			require("bufferline").setup()
 		end,
 	})
+	use({
+		"folke/todo-comments.nvim",
+		config = function()
+			require("todo-comments").setup()
+		end,
+	})
 
 	-- tag
 	use("craigemery/vim-autotag")
