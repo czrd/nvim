@@ -8,6 +8,12 @@ null_ls.setup({
 	sources = {
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.eslint,
+		null_ls.builtins.formatting.prettier,
+		null_ls.builtins.formatting.rustfmt,
+		null_ls.builtins.formatting.gofmt,
+		null_ls.builtins.formatting.shfmt.with({
+			extra_args = { "-i", "2", "-ci" },
+		}),
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
