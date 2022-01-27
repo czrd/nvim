@@ -89,7 +89,7 @@ local function keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  -- diable lspconfig's formatting
+  -- disable lspconfig's formatting
   client.resolved_capabilities.document_formatting = false
   client.resolved_capabilities.document_range_formatting = false
 
