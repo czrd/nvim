@@ -53,4 +53,3 @@ keymap("v", "<", "<gv", opts)
 
 -- git
 keymap("n", "<C-g>", "<cmd>lua _TOGGLE_LAZYGIT()<CR>", opts)
-keymap("n", "<C-t>", "<cmd>lua _TOGGLE_TWITTER()<CR>", opts)
