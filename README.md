@@ -7,6 +7,7 @@
 - [NeoVim](https://neovim.io/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [ctags](https://github.com/universal-ctags/ctags)
+- [Nerd Fonts](https://www.nerdfonts.com/)
 
 ## Setup
 
