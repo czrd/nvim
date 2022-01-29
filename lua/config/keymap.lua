@@ -46,6 +46,7 @@ keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
 -- navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<leader>x", ":bdelete!<CR>", opts)
 
 -- indent
 keymap("v", ">", ">gv", opts)
