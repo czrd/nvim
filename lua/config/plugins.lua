@@ -92,6 +92,12 @@ return packer.startup(function(use)
       require("todo-comments").setup()
     end,
   }
+  use {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup()
+    end,
+  }
 
   -- tag
   use "craigemery/vim-autotag"
