@@ -1,4 +1,5 @@
 local fn = vim.fn
+
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 
 -- install packer if needed
@@ -83,7 +84,13 @@ return packer.startup(function(use)
     "akinsho/bufferline.nvim",
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
-      require("bufferline").setup()
+      require("bufferline").setup {
+        options = {
+          show_buffer_close_icons = false,
+          show_close_icon = false,
+          diagnostics = "nvim_lsp",
+        },
+      }
     end,
   }
   use {
