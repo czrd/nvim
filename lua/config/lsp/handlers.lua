@@ -69,13 +69,7 @@ local function keymaps(bufnr)
   keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   keymap(bufnr, "n", "[g", "<cmd>lua require('lspsaga.diagnostic').navigate('prev')()<CR>", opts)
   keymap(bufnr, "n", "]g", "<cmd>lua require('lspsaga.diagnostic').navigate('next')()<CR>", opts)
-  keymap(
-    bufnr,
-    "n",
-    "gl",
-    "<cmd>lua require('lspsaga.diagnostic').show_line_diagnostics({ border = 'rounded' })<CR>",
-    opts
-  )
+  keymap(bufnr, "n", "gl", "<cmd>lua require('lspsaga.diagnostic').show_line_diagnostics()<CR>", opts)
   keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
   -- format
