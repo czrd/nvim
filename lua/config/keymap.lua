@@ -28,15 +28,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- tagbar
 keymap("n", "T", ":TagbarToggle<CR>", opts)
 
--- tab
-keymap("n", "th", ":tabfirst<CR>", opts)
-keymap("n", "tj", ":tabnext<CR>", opts)
-keymap("n", "tk", ":tabprev<CR>", opts)
-keymap("n", "tl", ":tablast<CR>", opts)
-keymap("n", "te", ":tabedit<Space>", opts)
-keymap("n", "tn", ":tabnew<Space>", opts)
-keymap("n", "tx", ":tabclose<CR>", opts)
-
 -- file explorer
 keymap("n", "<C-e>", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
