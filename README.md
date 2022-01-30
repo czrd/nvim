@@ -1,6 +1,5 @@
 # nvim
-
-![Screenshot from 2022-01-27 22-29-38](https://user-images.githubusercontent.com/49582751/151368639-446c93dc-895d-4d53-8f3e-6019cfc0d7a3.png)
+![Screenshot from 2022-01-30 14-06-43](https://user-images.githubusercontent.com/49582751/151687458-4c31bb3e-9003-4e82-8683-e060b7bed52c.png)
 
 ## Requirements
 
