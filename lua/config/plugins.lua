@@ -154,6 +154,7 @@ return packer.startup(function(use)
       require("gitsigns").setup()
     end,
   }
+  use "tpope/vim-fugitive"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
