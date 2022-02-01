@@ -6,6 +6,9 @@ end
 
 null_ls.setup {
   sources = {
+    null_ls.builtins.formatting.json_tool.with {
+      extra_args = { "--indent=2" },
+    },
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.rustfmt,
