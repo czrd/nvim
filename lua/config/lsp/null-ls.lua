@@ -10,7 +10,9 @@ null_ls.setup {
       extra_args = { "--indent=2" },
     },
     null_ls.builtins.formatting.stylua,
-    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.prettier.with {
+      prefer_local = "node_modules/.bin",
+    },
     null_ls.builtins.formatting.rustfmt,
     null_ls.builtins.formatting.gofmt,
     null_ls.builtins.formatting.shfmt.with {
