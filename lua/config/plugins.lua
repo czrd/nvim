@@ -49,6 +49,12 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"
   use "jiangmiao/auto-pairs"
   use {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  }
+  use {
     "terrortylor/nvim-comment",
     config = function()
       require("nvim_comment").setup {}
