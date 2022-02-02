@@ -139,6 +139,7 @@ return packer.startup(function(use)
 
   -- snippets
   use "L3MON4D3/LuaSnip"
+  use "rafamadriz/friendly-snippets"
 
   -- tree-sitter
   use {
