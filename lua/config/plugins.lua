@@ -45,6 +45,7 @@ return packer.startup(function(use)
   }
 
   -- utils
+  use "lewis6991/impatient.nvim"
   use "nvim-lua/plenary.nvim"
   use "nvim-lua/popup.nvim"
   use "jiangmiao/auto-pairs"
