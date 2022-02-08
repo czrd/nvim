@@ -45,3 +45,6 @@ keymap("v", "<", "<gv", opts)
 
 -- git
 keymap("n", "<C-g>", "<cmd>lua _TOGGLE_LAZYGIT()<CR>", opts)
+
+-- trouble
+keymap("n", "<C-t>", "<cmd>TroubleToggle<CR>", opts)
