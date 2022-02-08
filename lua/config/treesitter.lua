@@ -10,7 +10,4 @@ ts_config.setup {
   highlight = {
     enable = true,
   },
-  indent = {
-    enable = true,
-  },
 }
