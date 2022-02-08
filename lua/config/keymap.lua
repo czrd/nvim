@@ -26,7 +26,7 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- tagbar
-keymap("n", "T", ":TagbarToggle<CR>", opts)
+keymap("n", "T", ":SymbolsOutline<CR>", opts)
 
 -- file explorer
 keymap("n", "<C-e>", ":NvimTreeToggle<CR>", opts)

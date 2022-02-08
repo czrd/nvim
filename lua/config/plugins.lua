@@ -118,6 +118,7 @@ return packer.startup(function(use)
       require("colorizer").setup()
     end,
   }
+  use "simrat39/symbols-outline.nvim"
 
   -- tag
   use "craigemery/vim-autotag"
