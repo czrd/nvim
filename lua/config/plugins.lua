@@ -144,7 +144,13 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
-  use "tami5/lspsaga.nvim"
+  use {
+    "tami5/lspsaga.nvim",
+    config = function()
+      vim.cmd [[ highlight LspFloatWinBorder guibg=none ]]
+      vim.cmd [[ highlight LspFloatWinNormal guibg=none ]]
+    end,
+  }
   use "jose-elias-alvarez/null-ls.nvim"
 
   -- completion
