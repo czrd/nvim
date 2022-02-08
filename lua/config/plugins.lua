@@ -121,7 +121,6 @@ return packer.startup(function(use)
 
   -- tag
   use "craigemery/vim-autotag"
-  use "preservim/tagbar"
 
   -- terminal
   use "akinsho/toggleterm.nvim"
