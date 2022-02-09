@@ -40,9 +40,6 @@ end
 local function highlight_document(client)
   if client.resolved_capabilities.document_highlight then
     vim.cmd [[
-      hi LspReferenceRead  ctermfg=231 guifg=#ffffff ctermbg=161 guibg=#d7005f
-      hi LspReferenceText  ctermfg=232 guifg=#ffffff ctermbg=161 guibg=#d7005f
-      hi LspReferenceWrite ctermfg=231 guifg=#ffffff ctermbg=161 guibg=#d7005f
       augroup lsp_document_highlight
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
