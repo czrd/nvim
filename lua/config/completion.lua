@@ -17,11 +17,6 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
-vim.cmd [[
-  highlight CmpDocumentation guibg=none
-  highlight CmpDocumentationBorder guibg=none
-]]
-
 cmp.setup {
   snippet = {
     expand = function(args)

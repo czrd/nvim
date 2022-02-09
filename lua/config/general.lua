@@ -20,5 +20,3 @@ vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.splitright = true -- force all vertical splits to go to the right of current window
 vim.opt.pumheight = 10 -- pop up menu height
 vim.opt.shortmess:append "c"
-vim.opt.winblend = 20
-vim.opt.pumblend = 5
