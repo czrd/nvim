@@ -25,6 +25,9 @@ M.setup = function()
 
   vim.diagnostic.config(config)
 
+  -- format
+  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = "rounded",
   })
@@ -60,7 +63,7 @@ local function keymaps(bufnr)
   keymap(bufnr, "n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
 
   -- actions
-  keymap(bufnr, "n", "K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
+  keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   keymap(bufnr, "n", "<leader>rn", "<cmd>lua require('lspsaga.rename').rename()<CR>", opts)
   keymap(bufnr, "n", "<leader>ca", "<cmd>lua require('lspsaga.codeaction').code_action()<CR>", opts)
@@ -71,9 +74,6 @@ local function keymaps(bufnr)
   keymap(bufnr, "n", "]g", "<cmd>lua require('lspsaga.diagnostic').navigate('next')()<CR>", opts)
   keymap(bufnr, "n", "gl", "<cmd>lua require('lspsaga.diagnostic').show_line_diagnostics()<CR>", opts)
   keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-
-  -- format
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
 M.on_attach = function(client, bufnr)
