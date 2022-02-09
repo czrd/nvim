@@ -17,6 +17,25 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
+vim.cmd [[
+  " gray
+  highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+  " blue
+  highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
+  highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
+  " light blue
+  highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
+  highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
+  highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
+  " pink
+  highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
+  highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
+  " front
+  highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
+  highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
+  highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
+]]
+
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -69,11 +88,38 @@ cmp.setup {
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
+      vim_item.kind = ({
+        Text = "",
+        Method = "",
+        Function = "",
+        Constructor = "",
+        Field = "",
+        Variable = "",
+        Class = "ﴯ",
+        Interface = "",
+        Module = "",
+        Property = "ﰠ",
+        Unit = "",
+        Value = "",
+        Enum = "",
+        Keyword = "",
+        Snippet = "",
+        Color = "",
+        File = "",
+        Reference = "",
+        Folder = "",
+        EnumMember = "",
+        Constant = "",
+        Struct = "",
+        Event = "",
+        Operator = "",
+        TypeParameter = "",
+      })[vim_item.kind] .. " "
       vim_item.menu = ({
-        nvim_lsp = "[LS]",
-        luasnip = "[S]",
-        buffer = "[B]",
-        path = "[PATH]",
+        nvim_lsp = "[lsp]",
+        luasnip = "[snip]",
+        buffer = "[buf]",
+        path = "[path]",
       })[entry.source.name]
       return vim_item
     end,
