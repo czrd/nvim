@@ -32,7 +32,6 @@ M.setup = function()
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = "rounded",
   })
-
 end
 
 M.on_attach = function(client)
@@ -52,14 +51,6 @@ M.on_attach = function(client)
       augroup END
     ]]
   end
-
-  -- format
-  vim.cmd [[
-    augroup LspFormatting
-      autocmd! * <buffer>
-      autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-    augroup END
-  ]]
 end
 
 local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
