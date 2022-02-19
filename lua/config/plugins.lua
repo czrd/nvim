@@ -123,6 +123,12 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer"
   use "tami5/lspsaga.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
+  use {
+    "ionide/Ionide-vim",
+    config = function()
+      vim.g["fsharp#backend"] = "disable" -- enable only syntax highlight
+    end,
+  }
 
   -- completion
   use "hrsh7th/cmp-nvim-lsp"
