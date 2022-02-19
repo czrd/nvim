@@ -13,7 +13,6 @@ null_ls.setup {
     null_ls.builtins.formatting.prettier.with {
       prefer_local = "node_modules/.bin",
     },
-    null_ls.builtins.formatting.rustfmt,
     null_ls.builtins.formatting.gofmt,
     null_ls.builtins.formatting.shfmt.with {
       extra_args = { "-i", "2", "-ci" },
