@@ -129,6 +129,12 @@ return packer.startup(function(use)
       vim.g["fsharp#backend"] = "disable" -- enable only syntax highlight
     end,
   }
+  use {
+    "scalameta/nvim-metals",
+    config = function()
+      vim.cmd [[autocmd FileType scala,sbt lua require("metals").initialize_or_attach({})]]
+    end,
+  }
 
   -- completion
   use "hrsh7th/cmp-nvim-lsp"
