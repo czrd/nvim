@@ -35,33 +35,8 @@ return packer.startup(function(use)
   -- packer it self
   use "wbthomason/packer.nvim"
 
-  -- lualine
-  use {
-    "nvim-lualine/lualine.nvim",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    config = function()
-      require("lualine").setup {}
-    end,
-  }
-
-  -- utils
-  use "lewis6991/impatient.nvim"
-  use "nvim-lua/plenary.nvim"
-  use "nvim-lua/popup.nvim"
-  use "jiangmiao/auto-pairs"
-  use {
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end,
-  }
-  use {
-    "terrortylor/nvim-comment",
-    config = function()
-      require("nvim_comment").setup {}
-    end,
-  }
-  use "gelguy/wilder.nvim"
+  -- tag
+  use "craigemery/vim-autotag"
 
   -- file navigation
   use {
@@ -127,8 +102,14 @@ return packer.startup(function(use)
     end,
   }
 
-  -- tag
-  use "craigemery/vim-autotag"
+  -- lualine
+  use {
+    "nvim-lualine/lualine.nvim",
+    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+    config = function()
+      require("lualine").setup {}
+    end,
+  }
 
   -- terminal
   use "akinsho/toggleterm.nvim"
@@ -169,6 +150,25 @@ return packer.startup(function(use)
     end,
   }
   use "tpope/vim-fugitive"
+
+  -- utils
+  use "lewis6991/impatient.nvim"
+  use "nvim-lua/plenary.nvim"
+  use "nvim-lua/popup.nvim"
+  use "jiangmiao/auto-pairs"
+  use {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  }
+  use {
+    "terrortylor/nvim-comment",
+    config = function()
+      require("nvim_comment").setup {}
+    end,
+  }
+  use "gelguy/wilder.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
