@@ -65,9 +65,21 @@ return packer.startup(function(use)
   }
 
   -- code navigation
-  use "karb94/neoscroll.nvim"
-  use "yuttie/comfortable-motion.vim"
-  use "lukas-reineke/indent-blankline.nvim"
+  use {
+    "yuttie/comfortable-motion.vim",
+    config = function()
+      vim.g.comfortable_motion_friction = 80.0
+      vim.g.comfortable_motion_air_drag = 7.0
+    end,
+  }
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("indent_blankline").setup {
+        show_current_context = true,
+      }
+    end,
+  }
   use {
     "akinsho/bufferline.nvim",
     requires = "kyazdani42/nvim-web-devicons",
@@ -93,7 +105,16 @@ return packer.startup(function(use)
       require("colorizer").setup()
     end,
   }
-  use "simrat39/symbols-outline.nvim"
+  use {
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      vim.g.symbols_outline = {
+        width = 50,
+        show_symbol_details = false,
+        auto_preview = false,
+      }
+    end,
+  }
   use {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
@@ -152,6 +173,15 @@ return packer.startup(function(use)
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        ensure_installed = "maintained",
+        sync_install = false,
+        highlight = {
+          enable = true,
+        },
+      }
+    end,
   }
 
   -- git
