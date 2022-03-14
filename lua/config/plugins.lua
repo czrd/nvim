@@ -138,6 +138,7 @@ return packer.startup(function(use)
   -- colorschemes
   use "challenger-deep-theme/vim"
   use "folke/tokyonight.nvim"
+  use "Mofiqul/vscode.nvim"
 
   -- LSP
   use "neovim/nvim-lspconfig"
