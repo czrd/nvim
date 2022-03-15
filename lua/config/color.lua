@@ -1,5 +1,6 @@
-local colorscheme = "vscode"
+local colorscheme = "ayu"
 vim.g.vscode_style = "dark"
+vim.g.ayucolor = "dark"
 
 local ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not ok then
