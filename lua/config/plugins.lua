@@ -1,5 +1,4 @@
 local fn = vim.fn
-
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 
 -- install packer if needed
@@ -35,105 +34,23 @@ return packer.startup(function(use)
   -- packer it self
   use "wbthomason/packer.nvim"
 
-  -- tag
-  use "craigemery/vim-autotag"
+  -- icons
+  use "kyazdani42/nvim-web-devicons"
 
   -- file navigation
-  use {
-    "kyazdani42/nvim-tree.lua",
-    requires = {
-      "kyazdani42/nvim-web-devicons", -- optional, for file icon
-    },
-    config = function()
-      require("nvim-tree").setup {
-        view = {
-          width = 40,
-        },
-      }
-    end,
-  }
-  use {
-    "nvim-telescope/telescope.nvim",
-    requires = { { "nvim-lua/plenary.nvim" } },
-    config = function()
-      require("telescope").setup {
-        defaults = {
-          winblend = 20,
-        },
-      }
-    end,
-  }
+  use "kyazdani42/nvim-tree.lua"
+  use "nvim-telescope/telescope.nvim"
 
   -- code navigation
-  use {
-    "yuttie/comfortable-motion.vim",
-    config = function()
-      vim.g.comfortable_motion_friction = 80.0
-      vim.g.comfortable_motion_air_drag = 7.0
-    end,
-  }
-  use {
-    "lukas-reineke/indent-blankline.nvim",
-    config = function()
-      require("indent_blankline").setup {
-        show_current_context = true,
-      }
-    end,
-  }
-  use {
-    "akinsho/bufferline.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("bufferline").setup {
-        options = {
-          show_buffer_close_icons = false,
-          show_close_icon = false,
-          diagnostics = "nvim_lsp",
-        },
-      }
-    end,
-  }
-  use {
-    "folke/todo-comments.nvim",
-    config = function()
-      require("todo-comments").setup()
-    end,
-  }
-  use {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup()
-    end,
-  }
-  use {
-    "simrat39/symbols-outline.nvim",
-    config = function()
-      vim.g.symbols_outline = {
-        width = 50,
-        show_symbol_details = false,
-        auto_preview = false,
-      }
-    end,
-  }
-  use {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("trouble").setup()
-    end,
-  }
-
-  -- lualine
-  use {
-    "nvim-lualine/lualine.nvim",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    config = function()
-      require("lualine").setup {}
-    end,
-  }
-
-  -- terminal
-  use "akinsho/toggleterm.nvim"
+  use "yuttie/comfortable-motion.vim"
+  use "lukas-reineke/indent-blankline.nvim"
+  use "akinsho/bufferline.nvim"
+  use "folke/todo-comments.nvim"
+  use "norcalli/nvim-colorizer.lua"
+  use "folke/trouble.nvim"
+  use "nvim-lualine/lualine.nvim"
+  use "simrat39/symbols-outline.nvim"
+  use "craigemery/vim-autotag"
 
   -- colorschemes
   use "challenger-deep-theme/vim"
@@ -146,18 +63,8 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer"
   use "tami5/lspsaga.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
-  use {
-    "ionide/Ionide-vim",
-    config = function()
-      vim.g["fsharp#backend"] = "disable" -- enable only syntax highlight
-    end,
-  }
-  use {
-    "scalameta/nvim-metals",
-    config = function()
-      vim.cmd [[autocmd FileType scala,sbt lua require("metals").initialize_or_attach({})]]
-    end,
-  }
+  use "ionide/Ionide-vim"
+  use "scalameta/nvim-metals"
 
   -- completion
   use "hrsh7th/cmp-nvim-lsp"
@@ -175,24 +82,10 @@ return packer.startup(function(use)
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
-    config = function()
-      require("nvim-treesitter.configs").setup {
-        ensure_installed = "maintained",
-        sync_install = false,
-        highlight = {
-          enable = true,
-        },
-      }
-    end,
   }
 
   -- git
-  use {
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup()
-    end,
-  }
+  use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive"
 
   -- utils
@@ -200,19 +93,15 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim"
   use "nvim-lua/popup.nvim"
   use "jiangmiao/auto-pairs"
-  use {
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end,
-  }
-  use {
-    "terrortylor/nvim-comment",
-    config = function()
-      require("nvim_comment").setup {}
-    end,
-  }
+  use "akinsho/toggleterm.nvim"
+  use "terrortylor/nvim-comment"
   use "gelguy/wilder.nvim"
+  -- use {
+  --   "windwp/nvim-ts-autotag",
+  --   config = function()
+  --     require("nvim-ts-autotag").setup()
+  --   end,
+  -- }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

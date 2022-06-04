@@ -34,23 +34,31 @@ M.setup = function()
   })
 end
 
-M.on_attach = function(client)
+M.on_attach = function(client, bufnr)
   -- disable lspconfig's formatting to use null-ls's format
   if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+    client.server_capabilities.document_formatting = false
+    client.server_capabilities.document_range_formatting = false
   end
 
   -- document highlight
-  if client.resolved_capabilities.document_highlight then
-    vim.cmd [[
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]]
-  end
+  vim.api.nvim_create_augroup("lsp_document_highlight", {
+    clear = false,
+  })
+  vim.api.nvim_clear_autocmds {
+    buffer = bufnr,
+    group = "lsp_document_highlight",
+  }
+  vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+    group = "lsp_document_highlight",
+    buffer = bufnr,
+    callback = vim.lsp.buf.document_highlight,
+  })
+  vim.api.nvim_create_autocmd("CursorMoved", {
+    group = "lsp_document_highlight",
+    buffer = bufnr,
+    callback = vim.lsp.buf.clear_references,
+  })
 end
 
 local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
