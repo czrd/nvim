@@ -41,24 +41,26 @@ M.on_attach = function(client, bufnr)
     client.server_capabilities.document_range_formatting = false
   end
 
-  -- document highlight
-  vim.api.nvim_create_augroup("lsp_document_highlight", {
-    clear = false,
-  })
-  vim.api.nvim_clear_autocmds {
-    buffer = bufnr,
-    group = "lsp_document_highlight",
-  }
-  vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-    group = "lsp_document_highlight",
-    buffer = bufnr,
-    callback = vim.lsp.buf.document_highlight,
-  })
-  vim.api.nvim_create_autocmd("CursorMoved", {
-    group = "lsp_document_highlight",
-    buffer = bufnr,
-    callback = vim.lsp.buf.clear_references,
-  })
+  if client.server_capabilities.documentHighlightProvider then
+    -- document highlight
+    vim.api.nvim_create_augroup("lsp_document_highlight", {
+      clear = false,
+    })
+    vim.api.nvim_clear_autocmds {
+      buffer = bufnr,
+      group = "lsp_document_highlight",
+    }
+    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+      buffer = bufnr,
+      group = "lsp_document_highlight",
+      callback = vim.lsp.buf.document_highlight,
+    })
+    vim.api.nvim_create_autocmd("CursorMoved", {
+      buffer = bufnr,
+      group = "lsp_document_highlight",
+      callback = vim.lsp.buf.clear_references,
+    })
+  end
 end
 
 local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
