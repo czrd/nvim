@@ -96,12 +96,7 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim"
   use "terrortylor/nvim-comment"
   use "gelguy/wilder.nvim"
-  -- use {
-  --   "windwp/nvim-ts-autotag",
-  --   config = function()
-  --     require("nvim-ts-autotag").setup()
-  --   end,
-  -- }
+  use "windwp/nvim-ts-autotag"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
