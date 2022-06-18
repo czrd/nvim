@@ -51,12 +51,7 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
   use "simrat39/symbols-outline.nvim"
   use "craigemery/vim-autotag"
-  use {
-    "petertriho/nvim-scrollbar",
-    config = function()
-      require("scrollbar").setup()
-    end,
-  }
+  use "petertriho/nvim-scrollbar"
 
   -- colorschemes
   use "challenger-deep-theme/vim"
