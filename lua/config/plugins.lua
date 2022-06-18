@@ -54,10 +54,6 @@ return packer.startup(function(use)
   use "petertriho/nvim-scrollbar"
 
   -- colorschemes
-  use "challenger-deep-theme/vim"
-  use "folke/tokyonight.nvim"
-  use "Mofiqul/vscode.nvim"
-  use "ayu-theme/ayu-vim"
   use "marko-cerovac/material.nvim"
 
   -- LSP
