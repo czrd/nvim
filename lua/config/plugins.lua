@@ -63,6 +63,7 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
   use "Mofiqul/vscode.nvim"
   use "ayu-theme/ayu-vim"
+  use "marko-cerovac/material.nvim"
 
   -- LSP
   use "neovim/nvim-lspconfig"
