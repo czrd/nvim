@@ -64,6 +64,9 @@ return packer.startup(function(use)
   use "ionide/Ionide-vim"
   use "scalameta/nvim-metals"
 
+  -- clojure
+  use "Olical/conjure"
+
   -- completion
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-buffer"
